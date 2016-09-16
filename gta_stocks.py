@@ -3,7 +3,7 @@
 #Version 0.04
 #Import libs
 import sys, re, time, os, datetime, urllib2
-#syslib grabs the system arguments(thinking about removing it
+#syslib grabs the system arguments(thinking about removing it)
 #relib is used for the regular expressions
 #time is for when we want to sleep until grabbing the file again
 #os for running the clear command LINUX FRIENDLY ONLY
@@ -31,7 +31,7 @@ try:#watching for CTRL+C
 	
 	def Downloader(times_repeat):#this is where we will download the data 
 		
-		os.system('clear')#clean up and extra output
+		os.system('clear')#clean up any extra output
 		print (Fore.YELLOW +"STARTING TO EXTRACT AND FORMAT THE DATA FROM ROCKSTAR PUBLIC SERVER STOCK EXCHANGE")
 		print (Fore.RESET + Style.RESET_ALL)#call the colour reset
 		print (Fore.GREEN + """                                                          
