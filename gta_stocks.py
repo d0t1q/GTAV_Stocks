@@ -71,7 +71,13 @@ try:#watching for CTRL+C
 		print (Fore.RESET + Style.RESET_ALL)
 		print "\tDOWNLOADING STOCK INFO NOW";
 	        log_file = open("data/stocks.data", 'w')#create the data file, this will override any previously saved stock data
-	        downloaded_data  = urllib2.urlopen("http://socialclub.rockstargames.com/games/gtav/ajax/stockdetail")#download the data from the RS server
+	        try:
+			downloaded_data  = urllib2.urlopen("http://socialclub.rockstargames.com/games/gtav/ajax/stockdetail")
+			#download the data from the RS server
+		except Exception as e:
+			print e 
+			print 'FILE BLOCKED NO LONGER ALLOWED -- EXITING'
+			exit()	
 		for line in downloaded_data.readlines():#write to the file
 	        	print>> log_file, line#writing
 		log_file.close()#close the file
